@@ -3,6 +3,7 @@
 -->
 
 <head>
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
 
   <script>
     function myFunction() {
@@ -23,31 +24,65 @@
         // Do something for an error here
       });
 
-      /* var apiUrl2 = 'https://www.alphavantage.co/query?function=GLOBAL_QUOTE&symbol=MSFT&interval=5min&apikey=M1E3MZ86AZPO8AFH';
+      var apiUrl2 = 'https://www.alphavantage.co/query?function=GLOBAL_QUOTE&symbol=MSFT&interval=5min&apikey=M1E3MZ86AZPO8AFH';
       fetch(apiUrl2).then(response => {
-      
+
         return response.json();
-      
+
       }).then(data => {
-      
+
         // Work with JSON data here
         console.log(data);
-      
+
         document.getElementById("stock1").innerHTML = "$" + Math.round(data["Global Quote"]["05. price"] * 100) / 100;
         document.getElementById("stock1").classList.remove('spinner-border');
         if (data["Global Quote"]["10. change percent"] >= 0) {
           document.getElementById("stock1").classList.add('text-success');
-      
+
         } else {
-      
+
           document.getElementById("stock1").classList.add('text-danger');
         }
-      
-      
+
+
       }).catch(err => {
         // Do something for an error here
-      }); */
-    }
+      });
+      
+      var apiUrl3 = 'https://api.ritekit.com/v1/search/trending?green=0&latin=1';
+      fetch(apiUrl3).then(response => {
+        return response.json();
+      }).then(data => {
+        // Work with JSON data here
+        console.log("funky")
+        console.log(data);
+
+        document.getElementById("hashtag1").innerHTML = data;
+        document.getElementById("hashtag1").classList.remove('spinner-border');
+
+      }).catch(err => {
+        // Do something for an error here
+      });
+      
+     
+/*      var apiUrl3 = 'https://api.ritekit.com/v1/search/trending?green=0&latin=1';
+      fetch(apiUrl3, { mode: '*cors'}).then(response => {
+     
+        return response.json();
+     
+      }).then(data => {
+     
+        // Work with JSON data here
+        console.log(data);
+        document.getElementById("hashtag1").innerHTML = data;
+        document.getElementById("hashtag1").classList.remove('spinner-border');
+     
+        
+     
+      }).catch(err => {
+        // Do something for an error here
+      });*/
+         } 
 
   </script>
 </head>
@@ -59,11 +94,19 @@
   <div id="hiTemp" class="spinner-border" role="status"></div>
   <div id="loTemp" class="spinner-border" role="status"></div>
 
+  <div id="stock1" class="spinner-border" role="status"></div>
+  
 <!--   <a class="twitter-timeline" data-theme="dark" href="https://twitter.com/TechCrunch?ref_src=twsrc%5Etfw">Tweets by TechCrunch</a>  --><script async src="https://platform.twitter.com/widgets.js" data-tweet-limit="3" charset="utf-8"></script>
   <a class="twitter-timeline"
   href="https://twitter.com/TechCrunch?ref_src=twsrc%5Etfw"
   data-theme="dark" data-tweet-limit="1">
 </a>
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+  
 
 </body>
 
