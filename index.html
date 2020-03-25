@@ -89,18 +89,48 @@
 
 <body onload="myFunction()">
 
+<div class="row">
+    <div class="col-6">
+        <div class="card">
+            <div class="card-body">
+                <h5 class="card-title">My Stocks</h5>
+                <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+                <div id="stock1" class="spinner-border" role="status"></div>
+                <a href="#" class="btn btn-primary">Go somewhere</a>
+            </div>
+        </div>
+    </div>
+    <div class="col-6">
+        <div class="card">
+            <div class="card-body">
+                <h5 class="card-title">Weather</h5>
+                <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+                <div id="currentTemp" class="spinner-border" role="status"></div>
+                <div id="hiTemp" class="spinner-border" role="status"></div>
+                <div id="loTemp" class="spinner-border" role="status"></div>
+                <a href="#" class="btn btn-primary">Go somewhere</a>
+            </div>
+        </div>
+    </div>
 
-  <div id="currentTemp" class="spinner-border" role="status"></div>
-  <div id="hiTemp" class="spinner-border" role="status"></div>
-  <div id="loTemp" class="spinner-border" role="status"></div>
+    <div class="col-6">
+        <div class="card">
+            <div class="card-body">
+                <h5 class="card-title">Latest in Tech News</h5>
+                <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+                <!--   <a class="twitter-timeline" data-theme="dark" href="https://twitter.com/TechCrunch?ref_src=twsrc%5Etfw">Tweets by TechCrunch</a>  --><script async src="https://platform.twitter.com/widgets.js" data-tweet-limit="3" charset="utf-8"></script>
+                <a class="twitter-timeline"
+                   href="https://twitter.com/TechCrunch?ref_src=twsrc%5Etfw"
+                   data-theme="dark" data-tweet-limit="1">
+                </a>
+                <a href="#" class="btn btn-primary">Go somewhere</a>
+            </div>
+        </div>
+    </div>
+</div>
 
-  <div id="stock1" class="spinner-border" role="status"></div>
-  
-<!--   <a class="twitter-timeline" data-theme="dark" href="https://twitter.com/TechCrunch?ref_src=twsrc%5Etfw">Tweets by TechCrunch</a>  --><script async src="https://platform.twitter.com/widgets.js" data-tweet-limit="3" charset="utf-8"></script>
-  <a class="twitter-timeline"
-  href="https://twitter.com/TechCrunch?ref_src=twsrc%5Etfw"
-  data-theme="dark" data-tweet-limit="1">
-</a>
+
+
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
