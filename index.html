@@ -88,19 +88,24 @@
 </head>
 
 <body onload="myFunction()">
+<!-- Image and text -->
+<nav class="navbar navbar-light bg-light">
+    <a class="navbar-brand" href="#">
+
+        Kitchen Dashboard <i>CUSTOM</i>
+    </a>
+</nav>
 
 <div class="row">
     <div class="col-6">
-        <div class="card">
+        <div class="card" data-width="400px">
             <div class="card-body">
                 <h5 class="card-title">My Stocks</h5>
                 <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
                 <div id="stock1" class="spinner-border" role="status"></div>
-                <a href="#" class="btn btn-primary">Go somewhere</a>
+                <a href="#" class="btn btn-primary">Refresh</a>
             </div>
         </div>
-    </div>
-    <div class="col-6">
         <div class="card">
             <div class="card-body">
                 <h5 class="card-title">Weather</h5>
@@ -112,8 +117,7 @@
             </div>
         </div>
     </div>
-
-    <div class="col-6">
+    <div class="col-6" data-width="400px">
         <div class="card">
             <div class="card-body">
                 <h5 class="card-title">Latest in Tech News</h5>
@@ -121,12 +125,19 @@
                 <!--   <a class="twitter-timeline" data-theme="dark" href="https://twitter.com/TechCrunch?ref_src=twsrc%5Etfw">Tweets by TechCrunch</a>  --><script async src="https://platform.twitter.com/widgets.js" data-tweet-limit="3" charset="utf-8"></script>
                 <a class="twitter-timeline"
                    href="https://twitter.com/TechCrunch?ref_src=twsrc%5Etfw"
-                   data-theme="dark" data-tweet-limit="1">
+                   data-theme="dark" data-tweet-limit="1"
+                   data-width="400" data-height="400">
                 </a>
+
                 <a href="#" class="btn btn-primary">Go somewhere</a>
             </div>
         </div>
     </div>
+    <div class="col-6">
+
+    </div>
+
+
 </div>
 
 
