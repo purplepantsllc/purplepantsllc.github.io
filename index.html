@@ -87,7 +87,7 @@
   </script>
 </head>
 
-<body onload="myFunction()">
+<body onload="myFunction()" data-width="800px">
 <!-- Image and text -->
 <nav class="navbar navbar-light bg-light">
     <a class="navbar-brand" href="#">
@@ -101,19 +101,29 @@
         <div class="card" data-width="400px">
             <div class="card-body">
                 <h5 class="card-title">My Stocks</h5>
-                <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-                <div id="stock1" class="spinner-border" role="status"></div>
-                <a href="#" class="btn btn-primary">Refresh</a>
+<!--                <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>-->
+                <table>
+                    <tr>
+                        <th>Symbol</th>
+                        <th>Price</th>
+                    </tr>
+                    <tr>
+                        <td>MSFT</td>
+                        <td><div id="stock1" class="spinner-border" role="status"></div></td>
+                    </tr>
+                </table>
+<!--                <a href="#" class="btn btn-primary">Refresh</a>-->
             </div>
         </div>
         <div class="card">
             <div class="card-body">
-                <h5 class="card-title">Weather</h5>
-                <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-                <div id="currentTemp" class="spinner-border" role="status"></div>
-                <div id="hiTemp" class="spinner-border" role="status"></div>
-                <div id="loTemp" class="spinner-border" role="status"></div>
-                <a href="#" class="btn btn-primary">Go somewhere</a>
+                <h5 class="card-title">Weather in Seattle, WA</h5>
+
+               <h2 > NOW: <a id="currentTemp" class=" spinner-border" role="status"></a> </h2>
+                <h2 class="lead"> HI: <a id="hiTemp" class=" spinner-border" role="status"></a> </h2>
+                <h2 class="lead"> LO: <a id="loTemp" class=" spinner-border" role="status"></a> </h2>
+
+                <!--                <a href="#" class="btn btn-primary">Go somewhere</a>-->
             </div>
         </div>
     </div>
@@ -121,7 +131,7 @@
         <div class="card">
             <div class="card-body">
                 <h5 class="card-title">Latest in Tech News</h5>
-                <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+<!--                <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>-->
                 <!--   <a class="twitter-timeline" data-theme="dark" href="https://twitter.com/TechCrunch?ref_src=twsrc%5Etfw">Tweets by TechCrunch</a>  --><script async src="https://platform.twitter.com/widgets.js" data-tweet-limit="3" charset="utf-8"></script>
                 <a class="twitter-timeline"
                    href="https://twitter.com/TechCrunch?ref_src=twsrc%5Etfw"
@@ -129,7 +139,7 @@
                    data-width="400" data-height="400">
                 </a>
 
-                <a href="#" class="btn btn-primary">Go somewhere</a>
+<!--                <a href="#" class="btn btn-primary">Go somewhere</a>-->
             </div>
         </div>
     </div>
