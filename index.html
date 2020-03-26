@@ -7,6 +7,9 @@
 <title> Tablet Functioner</title>
   <script>
     function myFunction() {
+        var d = new Date();
+        document.getElementById("lastUpdated").innerHTML = d.getHours() +":"+ d.getMinutes() + " " + (d.getMonth()+1) + "/" + d.getDate() + "/" + d.getFullYear() + " " ;
+
       var apiUrl = 'https://api.openweathermap.org/data/2.5/weather?q=98112&appid=18025d631c9205586fc035a738306151';
       fetch(apiUrl).then(response => {
         return response.json();
@@ -24,7 +27,7 @@
         // Do something for an error here
       });
 
-      var apiUrl2 = 'https://www.alphavantage.co/query?function=GLOBAL_QUOTE&symbol=MSFT&interval=5min&apikey=M1E3MZ86AZPO8AFH';
+      var apiUrl2 = 'https://www.alphavantage.co/query?function=GLOBAL_QUOTE&symbol=RDFN&interval=5min&apikey=M1E3MZ86AZPO8AFH';
       fetch(apiUrl2).then(response => {
 
         return response.json();
@@ -36,12 +39,19 @@
 
         document.getElementById("stock1").innerHTML = "$" + Math.round(data["Global Quote"]["05. price"] * 100) / 100;
         document.getElementById("stock1").classList.remove('spinner-border');
-        if (data["Global Quote"]["10. change percent"] >= 0) {
+          // document.getElementById("stock1-change").innerHTML = data["Global Quote"]["10. change percent"];
+          // document.getElementById("stock1-change").classList.remove('spinner-border');
+
+        if (data["Global Quote"]["09. change"] > 0) {
           document.getElementById("stock1").classList.add('text-success');
+
+          console.log("greater");
 
         } else {
 
           document.getElementById("stock1").classList.add('text-danger');
+
+            console.log("less");
         }
 
 
@@ -87,29 +97,31 @@
   </script>
 </head>
 
-<body onload="myFunction()" data-width="800px">
+<body onload="myFunction()" >
 <!-- Image and text -->
 <nav class="navbar navbar-light bg-light">
     <a class="navbar-brand" href="#">
 
-        Kitchen Dashboard <i>CUSTOM</i>
+        Last Updated <b  id="lastUpdated">CUSTOM</b>
     </a>
 </nav>
 
 <div class="row">
     <div class="col-6">
-        <div class="card" data-width="400px">
+        <div class="card">
             <div class="card-body">
                 <h5 class="card-title">My Stocks</h5>
 <!--                <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>-->
                 <table>
-                    <tr>
-                        <th>Symbol</th>
-                        <th>Price</th>
+                    <tr >
+                        <th><b>Symbol</b> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</th>
+                        <th><b>Price</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</th>
+
                     </tr>
                     <tr>
-                        <td>MSFT</td>
-                        <td><div id="stock1" class="spinner-border" role="status"></div></td>
+                        <td><h2>MSFT</h2> </td>
+                        <td><h2><b id="stock1" class="spinner-border" role="status"></b></h2></td>
+
                     </tr>
                 </table>
 <!--                <a href="#" class="btn btn-primary">Refresh</a>-->
@@ -119,24 +131,24 @@
             <div class="card-body">
                 <h5 class="card-title">Weather in Seattle, WA</h5>
 
-               <h2 > NOW: <a id="currentTemp" class=" spinner-border" role="status"></a> </h2>
-                <h2 class="lead"> HI: <a id="hiTemp" class=" spinner-border" role="status"></a> </h2>
-                <h2 class="lead"> LO: <a id="loTemp" class=" spinner-border" role="status"></a> </h2>
+               <h2 > NOW: <b id="currentTemp" class=" spinner-border" role="status"></b> </h2>
+                <h2> HI: <b id="hiTemp" class=" spinner-border" role="status"></b> </h2>
+                <h2 > LO: <b id="loTemp" class=" spinner-border" role="status"></b> </h2>
 
                 <!--                <a href="#" class="btn btn-primary">Go somewhere</a>-->
             </div>
         </div>
     </div>
-    <div class="col-6" data-width="400px">
+    <div class="col-6">
         <div class="card">
             <div class="card-body">
-                <h5 class="card-title">Latest in Tech News</h5>
+<!--                <h5 class="card-title">Latest in Tech News</h5>-->
 <!--                <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>-->
                 <!--   <a class="twitter-timeline" data-theme="dark" href="https://twitter.com/TechCrunch?ref_src=twsrc%5Etfw">Tweets by TechCrunch</a>  --><script async src="https://platform.twitter.com/widgets.js" data-tweet-limit="3" charset="utf-8"></script>
                 <a class="twitter-timeline"
                    href="https://twitter.com/TechCrunch?ref_src=twsrc%5Etfw"
                    data-theme="dark" data-tweet-limit="1"
-                   data-width="400" data-height="400">
+                   data-width="90%" data-height="90%">
                 </a>
 
 <!--                <a href="#" class="btn btn-primary">Go somewhere</a>-->
