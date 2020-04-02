@@ -27,7 +27,7 @@
         // Do something for an error here
       });
 
-      var apiUrl2 = 'https://www.alphavantage.co/query?function=GLOBAL_QUOTE&symbol=RDFN&interval=5min&apikey=M1E3MZ86AZPO8AFH';
+      var apiUrl2 = 'https://www.alphavantage.co/query?function=GLOBAL_QUOTE&symbol=DJIA&interval=5min&apikey=M1E3MZ86AZPO8AFH';
       fetch(apiUrl2).then(response => {
 
         return response.json();
@@ -101,7 +101,7 @@
 <!-- Image and text -->
 <nav class="navbar navbar-light bg-light">
     <a class="navbar-brand" href="#">
-
+        <a href="#" class="btn btn-dark" onclick="location.reload();">Refresh</a>
         Last Updated <b  id="lastUpdated">CUSTOM</b>
     </a>
 </nav>
@@ -119,7 +119,7 @@
 
                     </tr>
                     <tr>
-                        <td><h2>MSFT</h2> </td>
+                        <td><h2>Dow Jones</h2> </td>
                         <td><h2><b id="stock1" class="spinner-border" role="status"></b></h2></td>
 
                     </tr>
