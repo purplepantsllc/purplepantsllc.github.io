@@ -27,7 +27,7 @@
         // Do something for an error here
       });
 
-      var apiUrl2 = 'https://www.alphavantage.co/query?function=GLOBAL_QUOTE&symbol=DJIA&interval=5min&apikey=M1E3MZ86AZPO8AFH';
+      var apiUrl2 = 'https://www.alphavantage.co/query?function=GLOBAL_QUOTE&symbol=RDFN&interval=5min&apikey=M1E3MZ86AZPO8AFH';
       fetch(apiUrl2).then(response => {
 
         return response.json();
@@ -97,11 +97,11 @@
   </script>
 </head>
 
-<body onload="myFunction()" >
+<body onload="myFunction()"class="bg-dark" >
 <!-- Image and text -->
-<nav class="navbar navbar-light bg-light">
+<nav class="navbar navbar-light bg-dark">
     <a class="navbar-brand" href="#">
-        <a href="#" class="btn btn-dark" onclick="location.reload();">Refresh</a>
+        <a href="#" class="btn btn-light" onclick="location.reload();">Refresh</a>
 
     </a>
 
@@ -110,6 +110,7 @@
 <div class="row">
     <div class="col-6">
         <div class="card">
+
             <div class="card-body">
                 <h5 class="card-title">My Stocks</h5>
 <!--                <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>-->
@@ -120,7 +121,7 @@
 
                     </tr>
                     <tr>
-                        <td><h2>Dow Jones</h2> </td>
+                        <td><h2>RDFN</h2> </td>
                         <td><h2><b id="stock1" class="spinner-border" role="status"></b></h2></td>
 
                     </tr>
@@ -128,6 +129,7 @@
 <!--                <a href="#" class="btn btn-primary">Refresh</a>-->
             </div>
         </div>
+        <br>
         <div class="card">
             <div class="card-body">
                 <h5 class="card-title">Weather in Seattle, WA</h5>
@@ -139,7 +141,7 @@
                 <!--                <a href="#" class="btn btn-primary">Go somewhere</a>-->
             </div>
         </div>
-        <div style="text-alignt: center"> Last Updated <b  id="lastUpdated">CUSTOM</b> </div>
+        <div style="text-align: center" class="text-white"> Last Updated <b  id="lastUpdated">CUSTOM</b> </div>
     </div>
     <div class="col-6">
         <div class="card">
